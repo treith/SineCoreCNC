@@ -1,0 +1,13 @@
+-- Mechanical Cycle-Start, Feed-Hold and Cycle-Stop Buttons
+if sig == mc.ISIG_INPUT100 and state == 1 then
+	CycleStart()
+end
+
+if sig == mc.ISIG_INPUT100 and state == 1 then
+	mc.mcCntlFeedHold (inst) 
+	mc.mcCntlSetLastError(inst, "Do Feed Hold")
+end
+
+if sig == mc.ISIG_INPUT102 and state == 1 then
+	CycleStop()
+end
